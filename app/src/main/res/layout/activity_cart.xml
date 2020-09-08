@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <include
+        layout="@layout/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cartrecycleview"
+        android:layout_width="match_parent"
+        android:layout_height="704dp"
+        android:layout_above="@+id/lyttotal"
+        android:layout_below="@+id/toolbar"
+        android:layout_margin="@dimen/default_margin">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+    <RelativeLayout
+        android:id="@+id/lyttotal"
+        android:layout_width="match_parent"
+        android:layout_height="187dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/card_shadow"
+        android:padding="@dimen/margin_10dp"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/lytamt"
+            android:layout_width="350dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="99dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="@string/total_amt"
+                android:textSize="@dimen/txt_size" />
+
+            <TextView
+                android:id="@+id/txtstotal"
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:textSize="@dimen/txt_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lytdelivery"
+            android:layout_width="350dp"
+            android:layout_height="26dp"
+            android:layout_below="@+id/lytamt"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="108dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="@string/delivery_charge"
+                android:textSize="@dimen/txt_size" />
+
+            <TextView
+                android:id="@+id/txtdeliverycharge"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:textSize="@dimen/txt_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lytsubtotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lytdelivery"
+            android:layout_alignStart="@+id/lytamt"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/cart_subtotal" />
+
+            <TextView
+                android:id="@+id/txtsubtotal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="191dp"
+            android:layout_height="42dp"
+            android:layout_below="@+id/lytsubtotal"
+            android:layout_alignStart="@+id/lytamt"
+            android:layout_alignEnd="@+id/lytsubtotal"
+            android:layout_marginStart="73dp"
+            android:layout_marginTop="33dp"
+            android:layout_marginEnd="76dp"
+            android:background="@drawable/round_corner_buttoon"
+            android:paddingStart="5dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="5dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:id="@+id/txttotal"
+                android:layout_width="15dp"
+                android:layout_height="13dp"
+                android:layout_centerVertical="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/white"
+                android:textStyle="bold|italic"
+                android:visibility="invisible"
+                tools:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/txtcheckout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/txttotal"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="1dp"
+                android:layout_toStartOf="@+id/imgcheckout"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@string/checkout"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imgcheckout"
+                android:layout_width="14dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="TODO"
+                android:src="@drawable/checkout"
+                android:visibility="invisible"
+                tools:visibility="invisible" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminateDrawable="@drawable/progressbar"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/lytempty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/emptycart" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/noitem_incart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="@string/noitem_incart_msg" />
+
+        <Button
+            android:id="@+id/btnShowNow"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/round_corner_buttoon"
+            android:clickable="false"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
+            android:text="@string/shop_now"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</RelativeLayout>

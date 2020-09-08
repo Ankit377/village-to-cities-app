@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "879591363928",
+    "firebase_url": "https://lado-vegetables.firebaseio.com",
+    "project_id": "lado-vegetables",
+    "storage_bucket": "lado-vegetables.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:879591363928:android:91ca504a86d943bb6b012d",
+        "android_client_info": {
+          "package_name": "com.lado.vegetables"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "879591363928-51h3al05icadjm5jm1j3v41tp828r790.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lado.vegetables",
+            "certificate_hash": "4fbf0a8edf026691102371eb4742c75da2eba925"
+          }
+        },
+        {
+          "client_id": "879591363928-drk8hqe8du8qomhnti82o0f7j9v253t1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtxK_z58zXq1ljlR-wfC7urLTmfiSKYKU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "879591363928-drk8hqe8du8qomhnti82o0f7j9v253t1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
