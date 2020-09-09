@@ -6,7 +6,7 @@ import com.android.volley.toolbox.ImageLoader;
 public class Constant {
 
 
-    public static String MAINBASEUrl = "http://192.168.1.17:8000/";
+    public static String MAINBASEUrl = "http://192.168.1.7:8000/";
 
     public static String BaseUrl = MAINBASEUrl + "api-firebase/";
     public static ImageLoader imageLoader = AppController.getInstance().getImageLoader();

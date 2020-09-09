@@ -1,6 +1,7 @@
 package com.lado.vegetables.activity;
 
 import android.app.Activity;
+import android.app.VoiceInteractor;
 import android.content.Intent;
 
 import android.os.Bundle;
@@ -191,6 +192,7 @@ public class MainActivity extends DrawerActivity {
                     try {
                         ArrayList<String> offerList = new ArrayList<>();
                         JSONObject objectbject = new JSONObject(response);
+                        System.out.println(objectbject);
                         if (!objectbject.getBoolean(Constant.ERROR)) {
                             JSONArray jsonArray = objectbject.getJSONArray(Constant.DATA);
                             for (int i = 0; i < jsonArray.length(); i++) {
@@ -217,7 +219,6 @@ public class MainActivity extends DrawerActivity {
                 System.out.println("======cate " + response);
                 if (result) {
                     try {
-//                        result = getJSONUrl();
                         JSONObject object = new JSONObject(response);
                         categoryArrayList = new ArrayList<>();
                         categoryArrayList.clear();
@@ -226,12 +227,15 @@ public class MainActivity extends DrawerActivity {
 
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                System.out.print("============object" + jsonObject);
+
                                 categoryArrayList.add(new Category(jsonObject.getString(Constant.ID),
                                         jsonObject.getString(Constant.NAME),
                                         jsonObject.getString(Constant.SUBTITLE),
                                         jsonObject.getString(Constant.IMAGE)));
 
                             }
+                            System.out.println("=============category array" + categoryArrayList);
                             categoryRecyclerView.setAdapter(new CategoryAdapter(MainActivity.this, categoryArrayList, R.layout.lyt_category, "cate"));
 
                         } else {
